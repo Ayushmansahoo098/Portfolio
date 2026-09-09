@@ -5,14 +5,14 @@ import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 export const JourneyTimeline: React.FC = () => {
   return (
-    <section id="journey" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+    <section id="journey" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12 sm:space-y-16">
       {/* Section Header */}
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         <div className="flex items-center space-x-2 text-[#E01E43] font-mono text-xs font-semibold uppercase tracking-widest">
           <Milestone className="w-4 h-4" />
           <span>CHAPTER 04 // TIMELINE</span>
         </div>
-        <h2 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
+        <h2 className="text-3xl sm:text-6xl font-extrabold text-white tracking-tight">
           MY TECH JOURNEY
         </h2>
         <p className="text-slate-400 text-sm sm:text-base max-w-2xl font-sans">
@@ -21,7 +21,7 @@ export const JourneyTimeline: React.FC = () => {
       </div>
 
       {/* Vertical Interactive Timeline */}
-      <div className="relative border-l border-[#6D001A]/40 ml-4 sm:ml-8 space-y-12 pl-6 sm:pl-10">
+      <div className="relative border-l border-[#6D001A]/50 ml-3 sm:ml-8 space-y-8 sm:space-y-12 pl-5 sm:pl-10">
         {PORTFOLIO_DATA.timeline.map((item, idx) => (
           <motion.div
             key={item.year}
@@ -32,32 +32,32 @@ export const JourneyTimeline: React.FC = () => {
             className="relative group"
           >
             {/* Timeline Dot Indicator */}
-            <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-[#000000] border-2 border-[#E01E43] flex items-center justify-center group-hover:scale-125 group-hover:bg-[#6D001A] transition-all shadow-lg shadow-[#6D001A]/50">
-              <div className="w-1.5 h-1.5 rounded-full bg-white group-hover:bg-white"></div>
+            <div className="absolute -left-[27px] sm:-left-[47px] top-1.5 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#000000] border-2 border-[#E01E43] flex items-center justify-center group-hover:scale-125 group-hover:bg-[#6D001A] transition-all shadow-lg shadow-[#6D001A]/50">
+              <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
             </div>
 
             {/* Card Content */}
-            <div className="glass-panel glass-panel-hover p-6 sm:p-8 rounded-2xl border border-white/10 space-y-4 bg-[#080305]">
+            <div className="glass-panel glass-panel-hover p-5 sm:p-8 rounded-2xl border border-white/10 space-y-4 bg-[#080305]">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="font-mono text-sm font-black text-white px-3 py-1 rounded-full bg-[#6D001A] border border-[#990026]">
+                <span className="font-mono text-xs sm:text-sm font-black text-white px-3 py-1 rounded-full bg-[#6D001A] border border-[#990026]">
                   {item.year}
                 </span>
-                <span className="text-xs font-mono text-slate-500">{item.subtitle}</span>
+                <span className="text-[11px] font-mono text-slate-500">{item.subtitle}</span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-[#E01E43] transition-colors">
+              <h3 className="text-lg sm:text-2xl font-bold text-white group-hover:text-[#E01E43] transition-colors">
                 {item.title}
               </h3>
 
-              <p className="text-sm text-slate-300 leading-relaxed font-sans">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
                 {item.description}
               </p>
 
               {/* Key Highlights */}
-              <ul className="space-y-2 pt-2 border-t border-white/5 text-xs font-mono text-slate-400">
+              <ul className="space-y-2 pt-2 border-t border-white/5 text-[11px] sm:text-xs font-mono text-slate-400">
                 {item.highlights.map((h, i) => (
                   <li key={i} className="flex items-start space-x-2">
-                    <CheckCircle className="w-4 h-4 text-[#B8002E] shrink-0 mt-0.5" />
+                    <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#B8002E] shrink-0 mt-0.5" />
                     <span>{h}</span>
                   </li>
                 ))}
@@ -68,7 +68,7 @@ export const JourneyTimeline: React.FC = () => {
                 {item.technologies.map((t) => (
                   <span
                     key={t}
-                    className="px-2.5 py-0.5 rounded bg-[#120508] text-slate-300 font-mono text-[10px] border border-white/5"
+                    className="px-2 sm:px-2.5 py-0.5 rounded bg-[#120508] text-slate-300 font-mono text-[10px] border border-white/5"
                   >
                     {t}
                   </span>

@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({
     };
     window.addEventListener('mousemove', handleMouseMove);
 
-    const particleCount = Math.min(Math.floor(width / 20), 65);
+    const particleCount = Math.min(Math.floor(width / 20), 55);
     const particles = Array.from({ length: particleCount }).map(() => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -122,22 +122,22 @@ export const Hero: React.FC<HeroProps> = ({
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#000000]">
+    <section id="hero" className="relative min-h-screen flex items-center pt-20 sm:pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#000000]">
       {/* Background Interactive Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" />
 
       {/* Deep Burgundy Lighting Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#6D001A]/20 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[700px] h-[350px] sm:h-[700px] bg-[#6D001A]/20 rounded-full blur-[100px] sm:blur-[150px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         {/* Left Column: Hero Copy */}
-        <div className="lg:col-span-7 space-y-6 text-left">
+        <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
           {/* Status Pill */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#4A0012]/40 border border-[#990026]/40 text-white font-mono text-xs shadow-lg"
+            className="inline-flex items-center space-x-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#4A0012]/40 border border-[#990026]/40 text-white font-mono text-[10px] sm:text-xs shadow-lg"
           >
             <span className="w-2 h-2 rounded-full bg-[#E01E43] animate-pulse" />
             <span className="tracking-wide">{PORTFOLIO_DATA.personal.status}</span>
@@ -150,7 +150,7 @@ export const Hero: React.FC<HeroProps> = ({
             transition={{ duration: 0.5, delay: 0.1 }}
             className="space-y-1"
           >
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-white leading-none">
+            <h1 className="text-4xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-white leading-tight sm:leading-none">
               AYUSHMAN
               <br />
               <span className="text-gradient">SAHOO</span>
@@ -163,7 +163,7 @@ export const Hero: React.FC<HeroProps> = ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2 className="text-lg sm:text-xl lg:text-2xl font-mono font-semibold text-[#E01E43] tracking-wider">
+            <h2 className="text-base sm:text-xl lg:text-2xl font-mono font-semibold text-[#E01E43] tracking-wider">
               {PORTFOLIO_DATA.personal.title}
             </h2>
           </motion.div>
@@ -173,7 +173,7 @@ export const Hero: React.FC<HeroProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed font-sans"
+            className="text-sm sm:text-lg text-slate-300 max-w-xl leading-relaxed font-sans"
           >
             {PORTFOLIO_DATA.personal.subtitle}
           </motion.p>
@@ -183,12 +183,12 @@ export const Hero: React.FC<HeroProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-wrap items-center gap-4 pt-2"
+            className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2"
           >
             <button
               onClick={onExploreWork}
               data-cursor="EXPLORE"
-              className="px-6 py-3.5 rounded-xl bg-[#6D001A] hover:bg-[#8E0022] text-white font-semibold text-sm transition-all shadow-lg shadow-[#6D001A]/40 flex items-center space-x-2 border border-[#990026] group"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#6D001A] hover:bg-[#8E0022] text-white font-semibold text-sm transition-all shadow-lg shadow-[#6D001A]/40 flex items-center justify-center space-x-2 border border-[#990026] group"
             >
               <span>EXPLORE MY WORK</span>
               <ArrowDownRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform" />
@@ -197,7 +197,7 @@ export const Hero: React.FC<HeroProps> = ({
             <button
               onClick={onExploreJourney}
               data-cursor="JOURNEY"
-              className="px-6 py-3.5 rounded-xl glass-panel hover:bg-[#4A0012]/40 text-white font-semibold text-sm border border-white/10 hover:border-[#990026] transition-all"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl glass-panel hover:bg-[#4A0012]/40 text-white font-semibold text-sm border border-white/10 hover:border-[#990026] transition-all flex items-center justify-center"
             >
               MY JOURNEY
             </button>
@@ -219,7 +219,7 @@ export const Hero: React.FC<HeroProps> = ({
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-slate-500 flex flex-col items-center space-y-1 cursor-pointer"
+        className="hidden sm:flex absolute bottom-6 left-1/2 -translate-x-1/2 text-slate-500 flex-col items-center space-y-1 cursor-pointer"
         onClick={onExploreWork}
       >
         <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400">SCROLL TO EXPLORE</span>
