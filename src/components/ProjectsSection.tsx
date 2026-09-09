@@ -56,24 +56,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         </p>
       </div>
 
-      {/* Category Filter Pills */}
-      <div className="flex flex-wrap gap-2">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setFilter(cat)}
-            data-cursor="FILTER"
-            className={`px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full font-mono text-[11px] sm:text-xs transition-all border ${
-              filter === cat
-                ? 'bg-[#6D001A] text-white font-bold border-[#990026] shadow-lg shadow-[#6D001A]/30'
-                : 'bg-slate-900/80 text-slate-400 border-white/10 hover:border-[#990026]/50 hover:text-white'
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         {filteredProjects.map((project) => (
