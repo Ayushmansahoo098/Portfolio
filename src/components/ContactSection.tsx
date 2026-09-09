@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, CheckCircle2, FileText, Lock } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 export const ContactSection: React.FC = () => {
@@ -22,16 +22,14 @@ export const ContactSection: React.FC = () => {
       {/* Dramatic Header */}
       <div className="space-y-4 sm:space-y-6 text-left">
         <div className="flex items-center space-x-2 text-[#E01E43] font-mono text-xs font-semibold uppercase tracking-widest">
-          <Mail className="w-4 h-4" />
-          <span>CHAPTER 07 // INITIATE CONTACT</span>
+          <Lock className="w-4 h-4" />
+          <span>CHAPTER 07 // SECURE COMMS CHANNEL</span>
         </div>
 
         <h2 className="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl font-black text-white tracking-tight leading-tight sm:leading-none">
-          LET&apos;S BUILD
+          SECURE COMMS
           <br />
-          <span className="text-gradient">SOMETHING</span>
-          <br />
-          INTERESTING.
+          <span className="text-gradient">TRANSMISSION.</span>
         </h2>
       </div>
 
@@ -39,8 +37,21 @@ export const ContactSection: React.FC = () => {
         {/* Left Column: Direct Links */}
         <div className="lg:col-span-5 space-y-6">
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
-            Whether you&apos;re building an AI/ML team, looking for an ambitious SDE candidate, or wanting to discuss 5G network reasoning or macOS systems, I&apos;m always ready to talk.
+            Whether you&apos;re building an AI/ML team, looking for an ambitious SDE candidate, or wanting to discuss 5G network reasoning or macOS systems, initiate contact below.
           </p>
+
+          {/* Quick Action Chips */}
+          <div className="flex flex-wrap gap-2 pt-1 font-mono text-xs">
+            <a
+              href={PORTFOLIO_DATA.personal.socials.resume}
+              target="_blank"
+              rel="noreferrer"
+              className="px-3.5 py-2 rounded-xl bg-[#6D001A] hover:bg-[#8E0022] text-white border border-[#990026] flex items-center space-x-2 font-bold transition-all shadow-md"
+            >
+              <FileText className="w-4 h-4" />
+              <span>RESUME.PDF</span>
+            </a>
+          </div>
 
           <div className="space-y-3 font-mono text-xs">
             <a
@@ -88,7 +99,7 @@ export const ContactSection: React.FC = () => {
         {/* Right Column: Contact Form */}
         <div className="lg:col-span-7 glass-panel p-6 sm:p-10 rounded-2xl border border-white/10 space-y-6 bg-[#080305]">
           <h3 className="text-lg sm:text-xl font-bold text-white font-mono flex items-center space-x-2">
-            <span>DIRECT MESSAGE</span>
+            <span>INITIATE DIRECT TRANSMISSION</span>
           </h3>
 
           {submitted ? (
@@ -130,7 +141,7 @@ export const ContactSection: React.FC = () => {
               </div>
 
               <div className="space-y-1">
-                <label className="text-slate-400 text-[10px] uppercase tracking-wider block">Message</label>
+                <label className="text-slate-400 text-[10px] uppercase tracking-wider block">Message Payload</label>
                 <textarea
                   required
                   rows={4}
