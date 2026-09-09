@@ -36,7 +36,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#08090a] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200 noise-overlay relative">
+    <div className="min-h-screen bg-[#000000] text-slate-100 selection:bg-[#6D001A]/40 selection:text-white noise-overlay relative overflow-x-hidden max-w-full">
       <AnimatePresence>
         {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
       </AnimatePresence>
@@ -52,7 +52,7 @@ export function App() {
             onClose={() => setIsCommandPaletteOpen(false)}
           />
 
-          <main className="relative z-10 space-y-12">
+          <main className="relative z-10 space-y-12 overflow-x-hidden max-w-full">
             <Hero
               onExploreWork={() => scrollTo('projects')}
               onExploreJourney={() => scrollTo('journey')}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Command, Terminal, Menu, X } from 'lucide-react';
-import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 interface NavbarProps {
   onOpenCommandPalette: () => void;
@@ -66,18 +65,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCommandPalette }) => {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: isVisible ? 0 : -100, opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="fixed top-3 sm:top-4 inset-x-0 z-40 flex justify-center px-3 sm:px-4 pointer-events-none"
+          className="fixed top-2 sm:top-4 inset-x-0 z-40 flex justify-center px-2 sm:px-4 pointer-events-none max-w-full overflow-hidden"
         >
-          <div className="pointer-events-auto flex items-center justify-between gap-2 sm:gap-4 px-3 sm:px-4 py-2 sm:py-2.5 glass-panel rounded-full border border-white/10 shadow-2xl backdrop-blur-xl max-w-5xl w-full bg-[#080305]/90">
+          <div className="pointer-events-auto flex items-center justify-between gap-1.5 sm:gap-4 px-2.5 sm:px-4 py-2 sm:py-2.5 glass-panel rounded-full border border-white/10 shadow-2xl backdrop-blur-xl max-w-5xl w-full bg-[#080305]/90 overflow-hidden">
             {/* Logo / OS Indicator */}
             <button
               onClick={() => scrollTo('hero')}
-              className="flex items-center space-x-2 text-white hover:text-[#B8002E] transition-colors group px-1 sm:px-2"
+              className="flex items-center space-x-1.5 text-white hover:text-[#B8002E] transition-colors group px-1 shrink-0"
             >
               <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#4A0012]/60 border border-[#990026]/40 flex items-center justify-center group-hover:border-[#B8002E] transition-colors shrink-0">
                 <Terminal className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E01E43]" />
               </div>
-              <span className="font-mono text-xs font-bold tracking-wider hidden xs:inline-block text-white">
+              <span className="font-mono text-xs font-bold tracking-wider text-white">
                 AYUSHMAN.OS
               </span>
             </button>
@@ -108,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCommandPalette }) => {
             </nav>
 
             {/* Right Actions */}
-            <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="flex items-center space-x-1.5 sm:space-x-3 shrink-0">
               {/* Status Pill */}
               <div className="hidden md:flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#4A0012]/40 border border-[#990026]/40 text-[10px] font-mono text-white">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E01E43] animate-pulse"></span>
@@ -119,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCommandPalette }) => {
               <button
                 onClick={onOpenCommandPalette}
                 data-cursor="COMMANDS"
-                className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-slate-900/80 hover:bg-[#6D001A]/60 border border-white/10 text-white text-xs transition-all hover:border-[#990026]"
+                className="flex items-center space-x-1 px-2 sm:px-3 py-1.5 rounded-full bg-slate-900/80 hover:bg-[#6D001A]/60 border border-white/10 text-white text-xs transition-all hover:border-[#990026]"
               >
                 <Command className="w-3.5 h-3.5 text-[#E01E43]" />
                 <span className="font-mono text-[10px]">⌘K</span>
@@ -128,7 +127,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCommandPalette }) => {
               {/* Mobile Menu Toggle Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-1.5 rounded-full bg-slate-900 text-slate-300 hover:text-white border border-white/10"
+                className="lg:hidden p-1.5 rounded-full bg-slate-900 text-slate-300 hover:text-white border border-white/10 shrink-0"
               >
                 {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
               </button>
@@ -144,7 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCommandPalette }) => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-16 inset-x-3 z-30 lg:hidden glass-panel p-4 rounded-2xl border border-[#990026]/60 bg-[#080305]/95 shadow-2xl font-mono text-xs space-y-2"
+            className="fixed top-14 inset-x-2 sm:inset-x-3 z-30 lg:hidden glass-panel p-3 sm:p-4 rounded-2xl border border-[#990026]/60 bg-[#080305]/95 shadow-2xl font-mono text-xs space-y-1.5 max-w-full"
           >
             {navItems.map((item) => (
               <button
