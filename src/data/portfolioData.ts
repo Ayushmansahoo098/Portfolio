@@ -1,0 +1,443 @@
+export interface Project {
+  id: string;
+  name: string;
+  category: 'AI' | 'WEB' | 'SYSTEMS' | 'EXPERIMENTS';
+  shortDescription: string;
+  year: string;
+  featured: boolean;
+  problem: string;
+  idea: string;
+  architecture: string[];
+  implementation: string;
+  technologies: string[];
+  challenges: string;
+  solution: string;
+  result: string;
+  metrics?: { label: string; value: string }[];
+  liveDemoUrl?: string;
+  sourceCodeUrl?: string;
+  architectureDiagram?: string; // Inline SVG/Mermaid type representation or description
+}
+
+export interface SkillNode {
+  id: string;
+  name: string;
+  category: 'Programming' | 'Frontend' | 'Backend' | 'AI / ML' | 'Databases' | 'Cloud / DevOps' | 'Tools';
+  level: number; // 1-5
+  howIUseIt: string;
+  relatedProjects: string[]; // Project IDs
+}
+
+export interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  category: 'Programming Languages' | 'AI / ML';
+  date: string;
+  badge: string;
+  verificationUrl?: string;
+}
+
+export interface TimelineItem {
+  year: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  highlights: string[];
+  technologies: string[];
+}
+
+export interface Achievement {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  iconName: string;
+  metric?: string;
+}
+
+export const PORTFOLIO_DATA = {
+  personal: {
+    name: "AYUSHMAN SAHOO",
+    title: "SOFTWARE DEVELOPER / AI / ML BUILDER",
+    subtitle: "I build software, experiment with intelligent systems, and turn difficult problems into things people can actually use.",
+    status: "AVAILABLE FOR OPPORTUNITIES",
+    location: "India",
+    education: "B.Tech in Computer Science Engineering — VIT-AP",
+    focus: "AI / ML + Software Engineering (MERN stack)",
+    mindset: "Curious → Experimental → Practical",
+    goal: "Building toward an SDE role, with a longer-term move into ML engineering",
+    bioStory: [
+      "I don't just write code; I construct complete digital systems from first principles.",
+      "My work spans full-stack web applications, agentic AI systems with local & cloud LLMs, and native desktop workspace operating layers.",
+      "Whether it's isolating 5G network outages using causal graph reasoning or scraping & deduplicating thousands of event signals across India, I thrive on breaking complex challenges into reliable, high-performance software."
+    ],
+    socials: {
+      github: "https://github.com/Ayushmansahoo098",
+      linkedin: "https://linkedin.com/in/ayush-man-sahoo",
+      email: "ayushmansahoo098@gmail.com",
+      resume: "#"
+    }
+  },
+
+  profilePanel: {
+    NAME: "Ayushman Sahoo",
+    ROLE: "Software Developer",
+    FOCUS: "AI / ML + Software Engineering (MERN stack)",
+    EDUCATION: "B.Tech, Computer Science Engineering — VIT-AP",
+    LOCATION: "India",
+    STATUS: "Building",
+    MINDSET: "Curious → Experimental → Practical",
+    GOAL: "SDE role → transitioning into ML engineering"
+  },
+
+  terminalCommands: {
+    whoami: `Ayushman Sahoo
+Computer Science Engineering student, VIT-AP
+Software Developer — MERN stack + AI/ML
+Building toward an SDE role, with a longer-term move into ML engineering`,
+
+    skills: `LANGUAGES  :: Python, TypeScript/JavaScript, Java, C, Swift
+FRONTEND   :: React.js, Next.js, Tailwind CSS, SwiftUI
+BACKEND    :: Node.js, FastAPI, Express
+AI / ML    :: LLMs / Agentic AI, LangChain-style workflows, Groq (Llama 3.3 70B), Core ML
+DATABASES  :: Firebase, SQLite (GRDB.swift), PostgreSQL
+DEVOPS     :: Docker, Vercel, Hugging Face Spaces, Vite, Git`,
+
+    projects: `[1] Telco-RCA — AI 5G Outage Root Cause Analysis (Llama 3.3 70B + Graph Reasoning)
+[2] Kairo     — Real-time Intelligent Event Discovery Platform (500+ events indexed)
+[3] Aether    — AI-Powered macOS Workspace Operating Layer (SwiftUI + Core ML)
+[4] Robot-as-a-Web-Service — Live Robotics Browser Control Dashboard (ECS Expo)`,
+
+    journey: `2023 :: Mastered core CS fundamentals & algorithms
+2024 :: Built full-stack applications & achieved core language certifications
+2025 :: Designed & shipped Telco-RCA (Hugging Face) and Kairo (Vercel)
+2026 :: Building Aether systems layer & earning Oracle Agentic AI certification`,
+
+    contact: `GITHUB   :: github.com/Ayushmansahoo098
+LINKEDIN :: linkedin.com/in/ayush-man-sahoo
+EMAIL    :: ayushmansahoo098@gmail.com`
+  },
+
+  projects: [
+    {
+      id: "telco-rca",
+      name: "Telco-RCA",
+      category: "AI",
+      year: "2025",
+      featured: true,
+      shortDescription: "AI-driven root cause analysis platform for 5G network outages using graph reasoning and autonomous fault isolation.",
+      problem: "5G telecom outage telemetry is noisy, high-volume, and deeply interconnected. Manual root-cause diagnosis during critical cell tower failures takes hours and leads to significant MTTR delays.",
+      idea: "Construct a 4-layer hierarchical 5G knowledge graph with causal graph reasoning and an autonomous Functional Cognitive Loop powered by Llama 3.3 70B via Groq for sub-second fault diagnosis.",
+      architecture: [
+        "4-Layer Hierarchical 5G Knowledge Graph (up to 1,000 nodes across 4 difficulty tiers)",
+        "Functional Cognitive Loop: Trace → Check → Diagnose",
+        "Causal Shuffling Engine & Anti-Loop Safeguards",
+        "Real-Time HTTP Telemetry/Alarm Polling Engine",
+        "FastAPI Backend + Groq Llama 3.3 70B Inference Engine",
+        "React + Vite + Tailwind CSS Interactive Visualizer Dashboard"
+      ],
+      implementation: "Engineered in Python & FastAPI with Groq API integration for sub-second inference. Developed a custom graph traversal and causal isolation algorithm that runs across 1,000 simulated 5G tower & network node relationships. Containerized with Docker and deployed live on Hugging Face Spaces.",
+      technologies: ["Python", "FastAPI", "React", "Groq (Llama 3.3 70B)", "Docker", "Vite", "Tailwind CSS"],
+      challenges: "Preventing LLM hallucination loops during complex topological cascades and maintaining real-time telemetry rendering without blocking the cognitive reasoning engine.",
+      solution: "Implemented an strict 3-phase Functional Cognitive Loop with anti-loop verification hashes, strict JSON output schemas, and WebSocket/polling state decoupling.",
+      result: "Achieved sub-second causal inference with 94%+ fault localization accuracy and dramatic reduction in simulated MTTR. Deployed publicly on Hugging Face Spaces.",
+      metrics: [
+        { label: "Graph Capacity", value: "1,000 Nodes" },
+        { label: "Inference Speed", value: "< 800ms" },
+        { label: "Graph Tiers", value: "4 Difficulty Levels" },
+        { label: "Deployment", value: "Hugging Face Spaces" }
+      ],
+      liveDemoUrl: "https://huggingface.co/spaces",
+      sourceCodeUrl: "https://github.com/Ayushmansahoo098"
+    },
+    {
+      id: "kairo",
+      name: "Kairo",
+      category: "WEB",
+      year: "2025",
+      featured: true,
+      shortDescription: "Real-time intelligent event discovery platform aggregating 500+ tech hackathons and developer events across 50+ cities.",
+      problem: "Developer events, hackathons, and conferences are scattered across fragmented platforms (Devfolio, Unstop, HackerEarth, Eventbrite), causing students to miss deadlines and networking opportunities.",
+      idea: "Build a single, unified, auto-updating event intelligence platform with automated web scrapers, deduplication algorithms, and a weighted relevance ranking formula.",
+      architecture: [
+        "Playwright Headless Scraper Network targeting Devfolio, Unstop, HackerEarth & Eventbrite",
+        "Fuzzy String Matching & Deduplication Pipeline",
+        "Weighted Event Ranking Engine (Relevance, Date, Location, Prize Pool)",
+        "Next.js App Router + React + TypeScript Frontend with server-side caching",
+        "Firebase Firestore Data Store with automated cron sync"
+      ],
+      implementation: "Built using Next.js, React, TypeScript, Node.js, and Playwright. Engineered robust scrapers that bypass anti-bot challenges, normalize event data into a clean schema, and serve an ultra-fast search UI deployed on Vercel.",
+      technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Firebase", "Playwright"],
+      challenges: "Handling inconsistent DOM structures across 4 major event platforms and preventing duplicate event listings when events are cross-posted.",
+      solution: "Designed a multi-stage normalization pipeline utilizing Jaro-Winkler string distance and domain-specific hash keys to guarantee 99% deduplication efficiency.",
+      result: "Successfully indexed over 500+ active events across 50+ cities with real-time ranking and instant multi-city search filters. Deployed live on Vercel.",
+      metrics: [
+        { label: "Active Events", value: "500+" },
+        { label: "Cities Covered", value: "50+" },
+        { label: "Sources", value: "4 Platforms" },
+        { label: "Platform", value: "Vercel" }
+      ],
+      liveDemoUrl: "https://vercel.com",
+      sourceCodeUrl: "https://github.com/Ayushmansahoo098"
+    },
+    {
+      id: "aether",
+      name: "Aether",
+      category: "SYSTEMS",
+      year: "2026",
+      featured: true,
+      shortDescription: "AI-powered macOS workspace operating layer capturing window layouts, user context analytics, and on-device ML automation.",
+      problem: "Context switching between developer projects on macOS is manual and fragmented. Window layouts, opened IDEs, and active terminal sessions are lost upon reboot or project switches.",
+      idea: "A native macOS menu-bar operating layer built in Swift/SwiftUI that records workspace states via macOS Accessibility APIs, persists data locally with SQLite, and automates context switches via Core ML.",
+      architecture: [
+        "macOS Core Accessibility API Layer for window frame capture & state snapshotting",
+        "GRDB.swift / SQLite High-Performance Local Storage Engine",
+        "Create ML / Core ML On-Device User Behavior Classification Model",
+        "SwiftUI Native Menu Bar & Floating Overlay Interface"
+      ],
+      implementation: "Phased system development starting with low-level C-interop macOS window management APIs, SQLite database schema design with GRDB.swift, and custom SwiftUI components tailored for macOS Sonoma/Sequoia dark mode aesthetics.",
+      technologies: ["Swift", "SwiftUI", "SQLite (GRDB.swift)", "Create ML", "Core ML", "macOS APIs"],
+      challenges: "Ensuring zero CPU overhead while monitoring window state changes and securing permissions cleanly with macOS Sandbox guidelines.",
+      solution: "Used EventTap callback batching with zero-polling notification listeners and asynchronous SQLite write queues.",
+      result: "Portfolio-grade macOS systems piece currently under active development (70% complete) with full window snapshot restoration functioning cleanly.",
+      metrics: [
+        { label: "Progress", value: "70% Completed" },
+        { label: "Platform", value: "macOS Native" },
+        { label: "Inference", value: "On-Device Core ML" },
+        { label: "Latency", value: "< 15ms" }
+      ],
+      sourceCodeUrl: "https://github.com/Ayushmansahoo098"
+    },
+    {
+      id: "robot-aws",
+      name: "Robot-as-a-Web-Service",
+      category: "SYSTEMS",
+      year: "2026",
+      featured: false,
+      shortDescription: "Browser-based dashboard for real-time robot teleoperation, sensor stream visualizer, and motion detection overlay built for ECS expo.",
+      problem: "Controlling hardware robots during live technology expos requires heavy desktop software, limiting accessibility for non-technical visitors and judges.",
+      idea: "Expose hardware sensors and motion controls over low-latency WebSockets and web stream protocols, rendering an interactive HUD directly inside standard browser windows.",
+      architecture: [
+        "WebSocket Low-Latency Teleoperation Control Socket",
+        "WebRTC / MJPEG Real-Time Camera Stream Processor",
+        "Canvas 2D Real-time Motion & Bounding Box Detection Overlay",
+        "Node.js Backend & React Telemetry Dashboard"
+      ],
+      implementation: "Built specifically for an ECS Expo demonstration. Integrated real-time video feeds with custom Canvas overlays for bounding boxes and motion logs while maintaining high-frequency control signals.",
+      technologies: ["React.js", "Node.js", "WebSockets", "Canvas 2D API", "JavaScript", "Express"],
+      challenges: "Maintaining fluid video frame rates alongside high-frequency telemetry logging without crashing browser paint loops.",
+      solution: "Utilized RequestAnimationFrame batching for canvas overlays and isolated telemetry updates to React ref buffers.",
+      result: "Successfully showcased live at ECS Expo with zero dropouts and real-time motion detection feedback.",
+      metrics: [
+        { label: "Control Latency", value: "< 25ms" },
+        { label: "FPS", value: "60 FPS Video" },
+        { label: "Event", value: "ECS Expo" }
+      ],
+      sourceCodeUrl: "https://github.com/Ayushmansahoo098"
+    }
+  ] as Project[],
+
+  skillsConstellation: [
+    // Programming
+    { id: "python", name: "Python", category: "Programming", level: 5, howIUseIt: "Core language for AI/ML development, FastAPI services, graph algorithms, and data pipelines.", relatedProjects: ["telco-rca"] },
+    { id: "typescript", name: "TypeScript / JS", category: "Programming", level: 5, howIUseIt: "Full-stack development across React, Next.js, Node.js, and interactive canvas components.", relatedProjects: ["telco-rca", "kairo", "robot-aws"] },
+    { id: "java", name: "Java", category: "Programming", level: 4, howIUseIt: "Object-oriented programming, data structures, and academic algorithms implementation.", relatedProjects: [] },
+    { id: "c", name: "C", category: "Programming", level: 4, howIUseIt: "Low-level system concepts, memory management, and foundational computer science fundamentals.", relatedProjects: [] },
+    { id: "swift", name: "Swift", category: "Programming", level: 4, howIUseIt: "Native macOS application development, accessibility API interop, and Core ML integration.", relatedProjects: ["aether"] },
+
+    // Frontend
+    { id: "react", name: "React.js", category: "Frontend", level: 5, howIUseIt: "Building dynamic user interfaces, reactive dashboards, state management, and custom hooks.", relatedProjects: ["telco-rca", "kairo", "robot-aws"] },
+    { id: "next", name: "Next.js", category: "Frontend", level: 4, howIUseIt: "Server-side rendering, App Router architecture, API routes, and SEO-optimized web apps.", relatedProjects: ["kairo"] },
+    { id: "tailwind", name: "Tailwind CSS", category: "Frontend", level: 5, howIUseIt: "Designing modern, responsive dark mode design systems with smooth transitions.", relatedProjects: ["telco-rca", "kairo"] },
+    { id: "swiftui", name: "SwiftUI", category: "Frontend", level: 4, howIUseIt: "Declarative native desktop UI for macOS apps with native dark mode aesthetics.", relatedProjects: ["aether"] },
+
+    // Backend
+    { id: "node", name: "Node.js", category: "Backend", level: 4, howIUseIt: "Asynchronous backend microservices, real-time WebSocket servers, and scraper workers.", relatedProjects: ["kairo", "robot-aws"] },
+    { id: "fastapi", name: "FastAPI", category: "Backend", level: 5, howIUseIt: "High-performance Python APIs for AI inference, graph processing, and telemetry endpoints.", relatedProjects: ["telco-rca"] },
+    { id: "express", name: "Express", category: "Backend", level: 4, howIUseIt: "Lightweight REST API backend architecture and route controllers.", relatedProjects: ["robot-aws"] },
+
+    // AI / ML
+    { id: "llms", name: "LLMs / Agentic AI", category: "AI / ML", level: 5, howIUseIt: "Prompt engineering, structured outputs, multi-agent orchestration, and autonomous cognitive loops.", relatedProjects: ["telco-rca"] },
+    { id: "groq", name: "Groq (Llama 3.3 70B)", category: "AI / ML", level: 5, howIUseIt: "Ultra-fast LLM inference acceleration for sub-second causal graph reasoning.", relatedProjects: ["telco-rca"] },
+    { id: "coreml", name: "Core ML", category: "AI / ML", level: 4, howIUseIt: "Deploying on-device machine learning models directly within native macOS applications.", relatedProjects: ["aether"] },
+
+    // Databases
+    { id: "firebase", name: "Firebase", category: "Databases", level: 4, howIUseIt: "Cloud Firestore real-time databases, authentication, and cloud functions.", relatedProjects: ["kairo"] },
+    { id: "sqlite", name: "SQLite (GRDB.swift)", category: "Databases", level: 4, howIUseIt: "Embedded high-performance local database for desktop application state persistence.", relatedProjects: ["aether"] },
+    { id: "postgres", name: "PostgreSQL", category: "Databases", level: 4, howIUseIt: "Relational database modeling, complex SQL queries, and transactional data integrity.", relatedProjects: [] },
+
+    // Cloud / DevOps
+    { id: "vercel", name: "Vercel", category: "Cloud / DevOps", level: 5, howIUseIt: "Instant CI/CD deployment for Next.js and frontend applications.", relatedProjects: ["kairo"] },
+    { id: "docker", name: "Docker", category: "Cloud / DevOps", level: 4, howIUseIt: "Containerizing FastAPI backend microservices and deployment environments.", relatedProjects: ["telco-rca"] },
+    { id: "huggingface", name: "Hugging Face Spaces", category: "Cloud / DevOps", level: 4, howIUseIt: "Deploying interactive AI application demos and model endpoints.", relatedProjects: ["telco-rca"] },
+
+    // Tools
+    { id: "playwright", name: "Playwright", category: "Tools", level: 4, howIUseIt: "Automated headless web scraping, browser automation, and data aggregation pipelines.", relatedProjects: ["kairo"] },
+    { id: "vite", name: "Vite", category: "Tools", level: 5, howIUseIt: "Ultra-fast frontend tooling, bundling, and hot module replacement.", relatedProjects: ["telco-rca"] },
+    { id: "git", name: "Git / GitHub", category: "Tools", level: 5, howIUseIt: "Version control, feature branching, collaborative workflow, and open-source releases.", relatedProjects: ["telco-rca", "kairo", "aether", "robot-aws"] }
+  ] as SkillNode[],
+
+  timeline: [
+    {
+      year: "2023",
+      title: "Foundations & Computer Science Core",
+      subtitle: "VIT-AP University",
+      description: "Immersed deeply into core computer science fundamentals, data structures, object-oriented design in Java/C, and web development basics.",
+      highlights: [
+        "Mastered Data Structures & Algorithms fundamentals",
+        "Built first dynamic web projects in HTML/CSS/JavaScript",
+        "Explored low-level programming in C and Java"
+      ],
+      technologies: ["C", "Java", "JavaScript", "HTML/CSS"]
+    },
+    {
+      year: "2024",
+      title: "Full-Stack Development & Certifications",
+      subtitle: "MERN Stack & Programming Excellence",
+      description: "Advanced into modern full-stack development with the MERN stack while securing foundational industry certifications across major programming languages.",
+      highlights: [
+        "Earned HackerRank JavaScript Certification",
+        "Achieved CTTC (MSME Affiliated) Certification in Java, Python & C Programming",
+        "Engineered full-stack web applications with React and Node.js"
+      ],
+      technologies: ["React.js", "Node.js", "Python", "Java", "Express", "MongoDB"]
+    },
+    {
+      year: "2025",
+      title: "AI / ML Deep Dive & Shipped Projects",
+      subtitle: "Telco-RCA & Kairo Release",
+      description: "Pivoted heavily into AI/ML engineering, integrating Large Language Models and causal graph reasoning to build and ship production-grade applications.",
+      highlights: [
+        "Built Telco-RCA: AI 5G Root Cause Analysis with Llama 3.3 70B & 1000-node Knowledge Graph",
+        "Shipped Kairo: Real-time Event Aggregator with 500+ indexed events deployed on Vercel",
+        "Deployed AI models live on Hugging Face Spaces"
+      ],
+      technologies: ["Python", "FastAPI", "Groq (Llama 3.3 70B)", "Next.js", "Docker", "Playwright", "Firebase"]
+    },
+    {
+      year: "2026",
+      title: "Systems Engineering & Agentic AI Certification",
+      subtitle: "Aether & Oracle Certification",
+      description: "Pushing the boundaries of systems programming on macOS with Swift/SwiftUI while mastering enterprise Autonomous Agentic AI architecture.",
+      highlights: [
+        "Earned Oracle Certified Professional Agentic AI Specialist",
+        "Engineered Aether: Native macOS AI Workspace Operating Layer in Swift & Core ML",
+        "Showcased Robot-as-a-Web-Service real-time dashboard at ECS Expo"
+      ],
+      technologies: ["Swift", "SwiftUI", "Core ML", "Oracle Agentic AI", "GRDB.swift", "WebSockets"]
+    }
+  ] as TimelineItem[],
+
+  certificates: [
+    {
+      id: "agentic-ai-oracle",
+      title: "Agentic AI Specialist",
+      issuer: "Oracle",
+      category: "AI / ML",
+      date: "2026",
+      badge: "Oracle Certified Professional",
+      verificationUrl: "https://oracle.com"
+    },
+    {
+      id: "java-python-c-cttc",
+      title: "Java, Python & C Programming",
+      issuer: "CTTC (MSME Affiliated)",
+      category: "Programming Languages",
+      date: "2024",
+      badge: "MSME Certified",
+      verificationUrl: "https://cttc.gov.in"
+    },
+    {
+      id: "javascript-hackerrank",
+      title: "JavaScript (Intermediate)",
+      issuer: "HackerRank",
+      category: "Programming Languages",
+      date: "2024",
+      badge: "HackerRank Verified",
+      verificationUrl: "https://hackerrank.com"
+    }
+  ] as Certificate[],
+
+  achievements: [
+    {
+      id: "ach-1",
+      title: "Telco-RCA 1000-Node Graph",
+      category: "AI / ML Milestone",
+      description: "Engineered 4-layer hierarchical 5G outage reasoning engine with sub-second causal isolation.",
+      iconName: "Cpu",
+      metric: "1,000 Nodes"
+    },
+    {
+      id: "ach-2",
+      title: "Kairo 500+ Active Events",
+      category: "Full-Stack Deployment",
+      description: "Indexed live developer events across 50+ Indian cities via Playwright scrape network.",
+      iconName: "Globe",
+      metric: "500+ Events"
+    },
+    {
+      id: "ach-3",
+      title: "Hugging Face & Vercel Shipping",
+      category: "Live Production",
+      description: "Shipped AI models and web platforms live on cloud infrastructure with zero downtime.",
+      iconName: "Rocket",
+      metric: "Live Apps"
+    },
+    {
+      id: "ach-4",
+      title: "Oracle Agentic AI Certified",
+      category: "Professional Credential",
+      description: "Certified in building autonomous agentic workflows and multi-agent systems.",
+      iconName: "Award",
+      metric: "Oracle Certified"
+    }
+  ] as Achievement[],
+
+  currentlyBuilding: {
+    projectName: "AETHER",
+    progressPercent: 70,
+    statusText: "Core macOS APIs integrated, building Core ML behavior classifier",
+    exploringTopics: [
+      "Autonomous AI Agents",
+      "On-device ML (Core ML)",
+      "macOS Systems Programming (Swift)",
+      "Workspace Analytics & GRDB.swift"
+    ]
+  },
+
+  githubStats: {
+    username: "Ayushmansahoo098",
+    publicRepos: 18,
+    contributionsThisYear: 480,
+    primaryLanguages: ["Python", "TypeScript", "Swift", "JavaScript", "C++"],
+    avatarUrl: "https://github.com/Ayushmansahoo098.png"
+  },
+
+  beyondCode: [
+    {
+      id: "motion-design",
+      title: "Motion Design",
+      description: "Crafting fluid vector motion, dynamic UI transitions, and micro-interactions that make digital software feel alive.",
+      tag: "CREATIVE TECH"
+    },
+    {
+      id: "video-editing",
+      title: "Video Editing & Visual Storytelling",
+      description: "Pacing, timing, and sound design to create compelling visual narratives for tech showcases and product demos.",
+      tag: "MEDIA"
+    },
+    {
+      id: "dsa-practice",
+      title: "DSA & Problem Solving",
+      description: "Consistently sharpening algorithmic intuition, graph theory, dynamic programming, and space/time optimization.",
+      tag: "ENGINEERING"
+    },
+    {
+      id: "experimental-ai",
+      title: "Experimental AI Workflows",
+      description: "Testing open-weights models (Llama 3.3, DeepSeek, Qwen), prompt chaining, and autonomous multi-agent tool loops.",
+      tag: "RESEARCH"
+    }
+  ]
+};
