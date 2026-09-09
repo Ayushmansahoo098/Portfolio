@@ -37,7 +37,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     { label: 'Go to About', section: 'about', icon: ArrowRight },
     { label: 'View Skills', section: 'skills', icon: ArrowRight },
     { label: 'View Projects', section: 'projects', icon: ArrowRight },
-    { label: 'View Journey', section: 'journey', icon: ArrowRight },
     { label: 'View Certificates', section: 'certificates', icon: ArrowRight },
     { label: 'Contact Ayushman', section: 'contact', icon: ArrowRight },
   ];
