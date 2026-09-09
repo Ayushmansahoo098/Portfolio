@@ -19,7 +19,7 @@ export const DeveloperTerminal: React.FC<DeveloperTerminalProps> = ({
     },
   ]);
   const [isSudoGranted, setIsSudoGranted] = useState(false);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const terminalOutputRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (initialCommand) {
@@ -28,7 +28,9 @@ export const DeveloperTerminal: React.FC<DeveloperTerminalProps> = ({
   }, [initialCommand]);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (history.length > 1 && terminalOutputRef.current) {
+      terminalOutputRef.current.scrollTop = terminalOutputRef.current.scrollHeight;
+    }
   }, [history]);
 
   const handleRunCommand = (rawCmd: string) => {
@@ -141,7 +143,10 @@ CONTACT     :: ayushmansahoo098@gmail.com
       </div>
 
       {/* Terminal Output Area */}
-      <div className="p-3 sm:p-4 max-h-[220px] sm:max-h-[300px] overflow-y-auto space-y-3 font-mono text-slate-300 text-[11px] sm:text-xs">
+      <div
+        ref={terminalOutputRef}
+        className="p-3 sm:p-4 max-h-[220px] sm:max-h-[300px] overflow-y-auto space-y-3 font-mono text-slate-300 text-[11px] sm:text-xs"
+      >
         {history.map((item, idx) => (
           <div key={idx} className="space-y-1">
             <div className="flex items-center space-x-1.5 text-[#B8002E]">
@@ -159,7 +164,6 @@ CONTACT     :: ayushmansahoo098@gmail.com
             </pre>
           </div>
         ))}
-        <div ref={bottomRef} />
       </div>
 
       {/* Terminal Input Line */}
