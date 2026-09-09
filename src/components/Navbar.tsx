@@ -7,8 +7,6 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenCommandPalette }) => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('hero');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -23,21 +21,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCommandPalette }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100 && !isMobileMenuOpen) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-      setLastScrollY(currentScrollY);
-
       const sections = navItems.map((item) => item.href);
       for (const sectionId of sections) {
         const elem = document.getElementById(sectionId);
         if (elem) {
           const rect = elem.getBoundingClientRect();
-          if (rect.top <= 200 && rect.bottom >= 200) {
+          if (rect.top <= 250 && rect.bottom >= 150) {
             setActiveSection(sectionId);
             break;
           }
@@ -47,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCommandPalette }) => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, isMobileMenuOpen]);
+  }, []);
 
   const scrollTo = (id: string) => {
     setIsMobileMenuOpen(false);
@@ -62,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCommandPalette }) => {
       <AnimatePresence>
         <motion.header
           initial={{ y: -100, opacity: 0 }}
-          animate={{ y: isVisible ? 0 : -100, opacity: isVisible ? 1 : 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
           className="fixed top-2 sm:top-4 inset-x-0 z-40 flex justify-center px-2 sm:px-4 pointer-events-none max-w-full overflow-hidden"
         >
