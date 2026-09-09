@@ -7,12 +7,8 @@ import { CommandPalette } from './components/CommandPalette';
 import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
 import { TechConstellation } from './components/TechConstellation';
-import { CurrentlyBuilding } from './components/CurrentlyBuilding';
 import { ProjectsSection } from './components/ProjectsSection';
-import { JourneyTimeline } from './components/JourneyTimeline';
 import { CertificatesGallery } from './components/CertificatesGallery';
-import { AchievementsSection } from './components/AchievementsSection';
-import { GithubActivity } from './components/GithubActivity';
 import { BeyondCode } from './components/BeyondCode';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -22,6 +18,12 @@ export function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+
+  React.useEffect(() => {
+    if (isLoaded) {
+      window.scrollTo(0, 0);
+    }
+  }, [isLoaded]);
 
   const scrollTo = (id: string) => {
     const elem = document.getElementById(id);
@@ -55,27 +57,19 @@ export function App() {
           <main className="relative z-10 space-y-12 overflow-x-hidden max-w-full">
             <Hero
               onExploreWork={() => scrollTo('projects')}
-              onExploreJourney={() => scrollTo('journey')}
+              onContactMe={() => scrollTo('contact')}
             />
 
             <AboutSection />
 
             <TechConstellation onSelectProject={handleSelectProjectFromTech} />
 
-            <CurrentlyBuilding />
-
             <ProjectsSection
               selectedProjectId={selectedProjectId}
               onClearSelectedProject={() => setSelectedProjectId(null)}
             />
 
-            <JourneyTimeline />
-
             <CertificatesGallery />
-
-            <AchievementsSection />
-
-            <GithubActivity />
 
             <BeyondCode />
 
