@@ -6,13 +6,13 @@ import { DeveloperTerminal } from './DeveloperTerminal';
 
 interface HeroProps {
   onExploreWork: () => void;
-  onExploreJourney: () => void;
+  onContactMe: () => void;
   onSudoHireSuccess?: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   onExploreWork,
-  onExploreJourney,
+  onContactMe,
   onSudoHireSuccess,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -195,11 +195,11 @@ export const Hero: React.FC<HeroProps> = ({
             </button>
 
             <button
-              onClick={onExploreJourney}
-              data-cursor="JOURNEY"
+              onClick={onContactMe}
+              data-cursor="CONTACT"
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl glass-panel hover:bg-[#4A0012]/40 active:scale-95 text-white font-semibold text-xs sm:text-sm border border-white/10 hover:border-[#990026] transition-all flex items-center justify-center"
             >
-              MY JOURNEY
+              GET IN TOUCH
             </button>
           </motion.div>
         </div>
