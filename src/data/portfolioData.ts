@@ -104,15 +104,15 @@ AI / ML    :: LLMs / Agentic AI, LangChain-style workflows, Groq (Llama 3.3 70B)
 DATABASES  :: Firebase, SQLite (GRDB.swift), PostgreSQL
 DEVOPS     :: Docker, Vercel, Hugging Face Spaces, Vite, Git`,
 
-    projects: `[1] Telco-RCA — AI 5G Outage Root Cause Analysis (Llama 3.3 70B + Graph Reasoning)
-[2] Kairo     — Real-time Intelligent Event Discovery Platform (500+ events indexed)
-[3] Aether    — AI-Powered macOS Workspace Operating Layer (SwiftUI + Core ML)
-[4] Robot-as-a-Web-Service — Live Robotics Browser Control Dashboard (ECS Expo)`,
+    projects: `[1] Telco-Root-cause-analysis — AI 5G Outage Root Cause Analysis (Llama 3.3 70B + Graph Reasoning)
+[2] Kairo-Event-Discovery-app — Real-time Event Discovery Aggregator (Next.js + Playwright)
+[3] pdf-to-quiz-nlp — Offline NLP System generating Quizzes from PDFs (spaCy + TF-IDF)
+[4] SafeRoute — Safety Navigation & Spatial Route Analytics Web App`,
 
     journey: `2023 :: Mastered core CS fundamentals & algorithms
-2024 :: Built full-stack applications & achieved core language certifications
-2025 :: Designed & shipped Telco-RCA (Hugging Face) and Kairo (Vercel)
-2026 :: Building Aether systems layer & earning Oracle Agentic AI certification`,
+2024 :: Built full-stack web applications & Python NLP / Computer Vision projects
+2025 :: Shipped Telco-Root-cause-analysis (Hugging Face) & Kairo-Event-Discovery-app (Vercel)
+2026 :: Building systems tools & earning Oracle Agentic AI certification`,
 
     contact: `GITHUB   :: github.com/Ayushmansahoo098
 LINKEDIN :: linkedin.com/in/ayush-man-sahoo
@@ -122,7 +122,7 @@ EMAIL    :: ayushmansahoo098@gmail.com`
   projects: [
     {
       id: "telco-rca",
-      name: "Telco-RCA",
+      name: "Telco-Root-cause-analysis",
       category: "AI",
       year: "2025",
       featured: true,
@@ -133,27 +133,26 @@ EMAIL    :: ayushmansahoo098@gmail.com`
         "4-Layer Hierarchical 5G Knowledge Graph (up to 1,000 nodes across 4 difficulty tiers)",
         "Functional Cognitive Loop: Trace → Check → Diagnose",
         "Causal Shuffling Engine & Anti-Loop Safeguards",
-        "Real-Time HTTP Telemetry/Alarm Polling Engine",
         "FastAPI Backend + Groq Llama 3.3 70B Inference Engine",
         "React + Vite + Tailwind CSS Interactive Visualizer Dashboard"
       ],
-      implementation: "Engineered in Python & FastAPI with Groq API integration for sub-second inference. Developed a custom graph traversal and causal isolation algorithm that runs across 1,000 simulated 5G tower & network node relationships. Containerized with Docker and deployed live on Hugging Face Spaces.",
+      implementation: "Engineered in Python & FastAPI with Groq API integration for sub-second inference. Developed a custom graph traversal and causal isolation algorithm that runs across 1,000 simulated 5G tower & network node relationships.",
       technologies: ["Python", "FastAPI", "React", "Groq (Llama 3.3 70B)", "Docker", "Vite", "Tailwind CSS"],
       challenges: "Preventing LLM hallucination loops during complex topological cascades and maintaining real-time telemetry rendering without blocking the cognitive reasoning engine.",
-      solution: "Implemented an strict 3-phase Functional Cognitive Loop with anti-loop verification hashes, strict JSON output schemas, and WebSocket/polling state decoupling.",
-      result: "Achieved sub-second causal inference with 94%+ fault localization accuracy and dramatic reduction in simulated MTTR. Deployed publicly on Hugging Face Spaces.",
+      solution: "Implemented a strict 3-phase Functional Cognitive Loop with anti-loop verification hashes, strict JSON output schemas, and state decoupling.",
+      result: "Achieved sub-second causal inference with 94%+ fault localization accuracy and dramatic reduction in simulated MTTR.",
       metrics: [
         { label: "Graph Capacity", value: "1,000 Nodes" },
         { label: "Inference Speed", value: "< 800ms" },
         { label: "Graph Tiers", value: "4 Difficulty Levels" },
-        { label: "Deployment", value: "Hugging Face Spaces" }
+        { label: "Deployment", value: "Hugging Face" }
       ],
       liveDemoUrl: "https://huggingface.co/spaces",
-      sourceCodeUrl: "https://github.com/Ayushmansahoo098"
+      sourceCodeUrl: "https://github.com/Ayushmansahoo098/Telco-Root-cause-analysis"
     },
     {
       id: "kairo",
-      name: "Kairo",
+      name: "Kairo-Event-Discovery-app",
       category: "WEB",
       year: "2025",
       featured: true,
@@ -164,14 +163,14 @@ EMAIL    :: ayushmansahoo098@gmail.com`
         "Playwright Headless Scraper Network targeting Devfolio, Unstop, HackerEarth & Eventbrite",
         "Fuzzy String Matching & Deduplication Pipeline",
         "Weighted Event Ranking Engine (Relevance, Date, Location, Prize Pool)",
-        "Next.js App Router + React + TypeScript Frontend with server-side caching",
+        "Next.js App Router + React + TypeScript Frontend",
         "Firebase Firestore Data Store with automated cron sync"
       ],
-      implementation: "Built using Next.js, React, TypeScript, Node.js, and Playwright. Engineered robust scrapers that bypass anti-bot challenges, normalize event data into a clean schema, and serve an ultra-fast search UI deployed on Vercel.",
+      implementation: "Built using Next.js, React, TypeScript, Node.js, and Playwright. Engineered robust scrapers that bypass anti-bot challenges, normalize event data into a clean schema, and serve an ultra-fast search UI.",
       technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Firebase", "Playwright"],
-      challenges: "Handling inconsistent DOM structures across 4 major event platforms and preventing duplicate event listings when events are cross-posted.",
-      solution: "Designed a multi-stage normalization pipeline utilizing Jaro-Winkler string distance and domain-specific hash keys to guarantee 99% deduplication efficiency.",
-      result: "Successfully indexed over 500+ active events across 50+ cities with real-time ranking and instant multi-city search filters. Deployed live on Vercel.",
+      challenges: "Handling inconsistent DOM structures across major event platforms and preventing duplicate event listings.",
+      solution: "Designed a multi-stage normalization pipeline utilizing Jaro-Winkler string distance and domain-specific hash keys to guarantee deduplication efficiency.",
+      result: "Successfully indexed over 500+ active events across 50+ cities with real-time ranking and instant multi-city search filters.",
       metrics: [
         { label: "Active Events", value: "500+" },
         { label: "Cities Covered", value: "50+" },
@@ -179,92 +178,91 @@ EMAIL    :: ayushmansahoo098@gmail.com`
         { label: "Platform", value: "Vercel" }
       ],
       liveDemoUrl: "https://vercel.com",
-      sourceCodeUrl: "https://github.com/Ayushmansahoo098"
+      sourceCodeUrl: "https://github.com/Ayushmansahoo098/Kairo-Event-Discovery-app"
     },
     {
-      id: "aether",
-      name: "Aether",
-      category: "SYSTEMS",
-      year: "2026",
+      id: "pdf-to-quiz",
+      name: "pdf-to-quiz-nlp",
+      category: "AI",
+      year: "2024",
       featured: true,
-      shortDescription: "AI-powered macOS workspace operating layer capturing window layouts, user context analytics, and on-device ML automation.",
-      problem: "Context switching between developer projects on macOS is manual and fragmented. Window layouts, opened IDEs, and active terminal sessions are lost upon reboot or project switches.",
-      idea: "A native macOS menu-bar operating layer built in Swift/SwiftUI that records workspace states via macOS Accessibility APIs, persists data locally with SQLite, and automates context switches via Core ML.",
+      shortDescription: "Offline NLP system converting PDF documents into interactive quizzes using TF-IDF text extraction and spaCy entity processing.",
+      problem: "Students and educators struggle to quickly extract key concepts and test comprehension from lengthy academic PDF textbooks and research papers.",
+      idea: "Develop an offline Python NLP pipeline that parses unstructured PDF text, computes sentence importance scores via TF-IDF, and extracts key entities using spaCy to auto-generate multiple-choice quiz questions.",
       architecture: [
-        "macOS Core Accessibility API Layer for window frame capture & state snapshotting",
-        "GRDB.swift / SQLite High-Performance Local Storage Engine",
-        "Create ML / Core ML On-Device User Behavior Classification Model",
-        "SwiftUI Native Menu Bar & Floating Overlay Interface"
+        "PyPDF2 / PDFMiner Document Ingestion & Text Normalization Layer",
+        "TF-IDF Sentence Ranking & Keyword Extractor",
+        "spaCy Named Entity Recognition (NER) & Part-of-Speech Distractor Generator",
+        "Interactive Quiz Engine Interface"
       ],
-      implementation: "Phased system development starting with low-level C-interop macOS window management APIs, SQLite database schema design with GRDB.swift, and custom SwiftUI components tailored for macOS Sonoma/Sequoia dark mode aesthetics.",
-      technologies: ["Swift", "SwiftUI", "SQLite (GRDB.swift)", "Create ML", "Core ML", "macOS APIs"],
-      challenges: "Ensuring zero CPU overhead while monitoring window state changes and securing permissions cleanly with macOS Sandbox guidelines.",
-      solution: "Used EventTap callback batching with zero-polling notification listeners and asynchronous SQLite write queues.",
-      result: "Portfolio-grade macOS systems piece currently under active development (70% complete) with full window snapshot restoration functioning cleanly.",
+      implementation: "Built entirely in Python utilizing spaCy, NLTK, and scikit-learn. The system extracts salient sentences, selects key noun phrases as answer targets, and dynamically generates plausible distractors.",
+      technologies: ["Python", "spaCy", "NLTK", "scikit-learn", "TF-IDF", "NLP"],
+      challenges: "Generating plausible, context-aware distractor choices without using expensive external LLM API calls.",
+      solution: "Engineered a semantic distractor generator utilizing word vector similarity and shared hypernym POS matching.",
+      result: "Generates 20+ structured quiz questions from a 50-page PDF in under 5 seconds with zero internet connectivity required.",
       metrics: [
-        { label: "Progress", value: "70% Completed" },
-        { label: "Platform", value: "macOS Native" },
-        { label: "Inference", value: "On-Device Core ML" },
-        { label: "Latency", value: "< 15ms" }
+        { label: "Generation Speed", value: "< 5 sec / 50pg" },
+        { label: "Execution Mode", value: "100% Offline" },
+        { label: "NLP Library", value: "spaCy + TF-IDF" }
       ],
-      sourceCodeUrl: "https://github.com/Ayushmansahoo098"
+      sourceCodeUrl: "https://github.com/Ayushmansahoo098/pdf-to-quiz-nlp"
     },
     {
-      id: "robot-aws",
-      name: "Robot-as-a-Web-Service",
-      category: "SYSTEMS",
-      year: "2026",
+      id: "saferoute",
+      name: "SafeRoute",
+      category: "WEB",
+      year: "2024",
       featured: false,
-      shortDescription: "Browser-based dashboard for real-time robot teleoperation, sensor stream visualizer, and motion detection overlay built for ECS expo.",
-      problem: "Controlling hardware robots during live technology expos requires heavy desktop software, limiting accessibility for non-technical visitors and judges.",
-      idea: "Expose hardware sensors and motion controls over low-latency WebSockets and web stream protocols, rendering an interactive HUD directly inside standard browser windows.",
+      shortDescription: "Hackathon safety navigation web application calculating safe travel routes based on location intelligence and emergency response mapping.",
+      problem: "Standard navigation apps prioritize shortest physical distance without accounting for real-time safety factors like street lighting, incident history, or emergency service proximity.",
+      idea: "Create a safe-routing web app that layers spatial risk heatmaps over map navigation APIs to recommend safety-optimized walking and transit routes.",
       architecture: [
-        "WebSocket Low-Latency Teleoperation Control Socket",
-        "WebRTC / MJPEG Real-Time Camera Stream Processor",
-        "Canvas 2D Real-time Motion & Bounding Box Detection Overlay",
-        "Node.js Backend & React Telemetry Dashboard"
+        "Leaflet / Mapbox GL JS Spatial Map Rendering",
+        "Safety Score Algorithm combining lighting, venue activity, and emergency hubs",
+        "Node.js & Express Routing API",
+        "React Frontend UI with live route switching"
       ],
-      implementation: "Built specifically for an ECS Expo demonstration. Integrated real-time video feeds with custom Canvas overlays for bounding boxes and motion logs while maintaining high-frequency control signals.",
-      technologies: ["React.js", "Node.js", "WebSockets", "Canvas 2D API", "JavaScript", "Express"],
-      challenges: "Maintaining fluid video frame rates alongside high-frequency telemetry logging without crashing browser paint loops.",
-      solution: "Utilized RequestAnimationFrame batching for canvas overlays and isolated telemetry updates to React ref buffers.",
-      result: "Successfully showcased live at ECS Expo with zero dropouts and real-time motion detection feedback.",
+      implementation: "Developed during a competitive hackathon. Integrated open map datasets with custom scoring algorithms to calculate dynamic route safety indices.",
+      technologies: ["React.js", "Node.js", "Express", "Leaflet", "JavaScript", "CSS3"],
+      challenges: "Computing multi-waypoint safety scores along high-resolution geographical paths in real time.",
+      solution: "Optimized spatial bounding box queries and cached route segment safety metrics locally.",
+      result: "Built a fully functional prototype demoed live at hackathon judging.",
       metrics: [
-        { label: "Control Latency", value: "< 25ms" },
-        { label: "FPS", value: "60 FPS Video" },
-        { label: "Event", value: "ECS Expo" }
+        { label: "Type", value: "Hackathon Project" },
+        { label: "Stack", value: "React + Leaflet" },
+        { label: "Focus", value: "Safety Navigation" }
       ],
-      sourceCodeUrl: "https://github.com/Ayushmansahoo098"
+      sourceCodeUrl: "https://github.com/Ayushmansahoo098/SafeRoute"
     }
   ] as Project[],
 
   skillsConstellation: [
     // Programming
-    { id: "python", name: "Python", category: "Programming", level: 5, howIUseIt: "Core language for AI/ML development, FastAPI services, graph algorithms, and data pipelines.", relatedProjects: ["telco-rca"] },
-    { id: "typescript", name: "TypeScript / JS", category: "Programming", level: 5, howIUseIt: "Full-stack development across React, Next.js, Node.js, and interactive canvas components.", relatedProjects: ["telco-rca", "kairo", "robot-aws"] },
+    { id: "python", name: "Python", category: "Programming", level: 5, howIUseIt: "Core language for AI/ML development, FastAPI services, graph algorithms, and data pipelines.", relatedProjects: ["telco-rca", "pdf-to-quiz"] },
+    { id: "typescript", name: "TypeScript / JS", category: "Programming", level: 5, howIUseIt: "Full-stack development across React, Next.js, Node.js, and interactive canvas components.", relatedProjects: ["telco-rca", "kairo"] },
     { id: "java", name: "Java", category: "Programming", level: 4, howIUseIt: "Object-oriented programming, data structures, and academic algorithms implementation.", relatedProjects: [] },
     { id: "c", name: "C", category: "Programming", level: 4, howIUseIt: "Low-level system concepts, memory management, and foundational computer science fundamentals.", relatedProjects: [] },
-    { id: "swift", name: "Swift", category: "Programming", level: 4, howIUseIt: "Native macOS application development, accessibility API interop, and Core ML integration.", relatedProjects: ["aether"] },
+    { id: "swift", name: "Swift", category: "Programming", level: 4, howIUseIt: "Native mobile & desktop application exploration and Swift API fundamentals.", relatedProjects: [] },
 
     // Frontend
-    { id: "react", name: "React.js", category: "Frontend", level: 5, howIUseIt: "Building dynamic user interfaces, reactive dashboards, state management, and custom hooks.", relatedProjects: ["telco-rca", "kairo", "robot-aws"] },
+    { id: "react", name: "React.js", category: "Frontend", level: 5, howIUseIt: "Building dynamic user interfaces, reactive dashboards, state management, and custom hooks.", relatedProjects: ["telco-rca", "kairo", "saferoute"] },
     { id: "next", name: "Next.js", category: "Frontend", level: 4, howIUseIt: "Server-side rendering, App Router architecture, API routes, and SEO-optimized web apps.", relatedProjects: ["kairo"] },
     { id: "tailwind", name: "Tailwind CSS", category: "Frontend", level: 5, howIUseIt: "Designing modern, responsive dark mode design systems with smooth transitions.", relatedProjects: ["telco-rca", "kairo"] },
-    { id: "swiftui", name: "SwiftUI", category: "Frontend", level: 4, howIUseIt: "Declarative native desktop UI for macOS apps with native dark mode aesthetics.", relatedProjects: ["aether"] },
+    { id: "swiftui", name: "SwiftUI", category: "Frontend", level: 4, howIUseIt: "Declarative native UI exploration for mobile and desktop platforms.", relatedProjects: [] },
 
     // Backend
-    { id: "node", name: "Node.js", category: "Backend", level: 4, howIUseIt: "Asynchronous backend microservices, real-time WebSocket servers, and scraper workers.", relatedProjects: ["kairo", "robot-aws"] },
+    { id: "node", name: "Node.js", category: "Backend", level: 4, howIUseIt: "Asynchronous backend microservices, real-time WebSocket servers, and scraper workers.", relatedProjects: ["kairo", "saferoute"] },
     { id: "fastapi", name: "FastAPI", category: "Backend", level: 5, howIUseIt: "High-performance Python APIs for AI inference, graph processing, and telemetry endpoints.", relatedProjects: ["telco-rca"] },
-    { id: "express", name: "Express", category: "Backend", level: 4, howIUseIt: "Lightweight REST API backend architecture and route controllers.", relatedProjects: ["robot-aws"] },
+    { id: "express", name: "Express", category: "Backend", level: 4, howIUseIt: "Lightweight REST API backend architecture and route controllers.", relatedProjects: ["saferoute"] },
 
     // AI / ML
     { id: "llms", name: "LLMs / Agentic AI", category: "AI / ML", level: 5, howIUseIt: "Prompt engineering, structured outputs, multi-agent orchestration, and autonomous cognitive loops.", relatedProjects: ["telco-rca"] },
     { id: "groq", name: "Groq (Llama 3.3 70B)", category: "AI / ML", level: 5, howIUseIt: "Ultra-fast LLM inference acceleration for sub-second causal graph reasoning.", relatedProjects: ["telco-rca"] },
-    { id: "coreml", name: "Core ML", category: "AI / ML", level: 4, howIUseIt: "Deploying on-device machine learning models directly within native macOS applications.", relatedProjects: ["aether"] },
+    { id: "nlp", name: "NLP & Text Analytics", category: "AI / ML", level: 4, howIUseIt: "Text processing, spaCy NER, TF-IDF ranking, and keyword extraction.", relatedProjects: ["pdf-to-quiz"] },
 
     // Databases
     { id: "firebase", name: "Firebase", category: "Databases", level: 4, howIUseIt: "Cloud Firestore real-time databases, authentication, and cloud functions.", relatedProjects: ["kairo"] },
-    { id: "sqlite", name: "SQLite (GRDB.swift)", category: "Databases", level: 4, howIUseIt: "Embedded high-performance local database for desktop application state persistence.", relatedProjects: ["aether"] },
+    { id: "sqlite", name: "SQLite", category: "Databases", level: 4, howIUseIt: "Embedded high-performance local database for application state persistence.", relatedProjects: [] },
     { id: "postgres", name: "PostgreSQL", category: "Databases", level: 4, howIUseIt: "Relational database modeling, complex SQL queries, and transactional data integrity.", relatedProjects: [] },
 
     // Cloud / DevOps
@@ -275,7 +273,7 @@ EMAIL    :: ayushmansahoo098@gmail.com`
     // Tools
     { id: "playwright", name: "Playwright", category: "Tools", level: 4, howIUseIt: "Automated headless web scraping, browser automation, and data aggregation pipelines.", relatedProjects: ["kairo"] },
     { id: "vite", name: "Vite", category: "Tools", level: 5, howIUseIt: "Ultra-fast frontend tooling, bundling, and hot module replacement.", relatedProjects: ["telco-rca"] },
-    { id: "git", name: "Git / GitHub", category: "Tools", level: 5, howIUseIt: "Version control, feature branching, collaborative workflow, and open-source releases.", relatedProjects: ["telco-rca", "kairo", "aether", "robot-aws"] }
+    { id: "git", name: "Git / GitHub", category: "Tools", level: 5, howIUseIt: "Version control, feature branching, collaborative workflow, and open-source releases.", relatedProjects: ["telco-rca", "kairo", "pdf-to-quiz", "saferoute"] }
   ] as SkillNode[],
 
   timeline: [
