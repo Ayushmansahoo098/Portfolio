@@ -5,8 +5,8 @@
 
   <br />
 
-  <a href="https://portfolio-ayushmansahoo.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Live_Demo-portfolio--ayushmansahoo.vercel.app-E01E43?style=for-the-badge&logo=vercel" alt="Live Demo" />
+  <a href="https://portfolio-ayush-man.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-portfolio--ayush--man.vercel.app-E01E43?style=for-the-badge&logo=vercel" alt="Live Demo" />
   </a>
   <a href="https://github.com/Ayushmansahoo098/Portfolio">
     <img src="https://img.shields.io/badge/Stack-React%2018%20%7C%20TypeScript%20%7C%20Tailwind-6D001A?style=for-the-badge" alt="Stack" />
@@ -23,7 +23,7 @@
 
 ## 🌐 Live Deployment
 
-🚀 **Live Website**: [https://portfolio-ayushmansahoo.vercel.app](https://portfolio-ayushmansahoo.vercel.app)
+🚀 **Live Website**: [https://portfolio-ayush-man.vercel.app](https://portfolio-ayush-man.vercel.app)
 
 ---
 
