@@ -59,6 +59,62 @@
 
 ---
 
+## 🏗️ System Architecture & File Structure
+
+```text
+Portfolio/
+├── src/
+│   ├── components/              # Modular UI Components & Page Sections
+│   │   ├── Navbar.tsx             # Floating glassmorphic sticky header & navigation drawer
+│   │   ├── Hero.tsx               # Hero banner with dynamic HTML5 canvas particle network
+│   │   ├── AboutSection.tsx        # Personal narrative, profile panel, & engineering focus
+│   │   ├── TechConstellation.tsx   # Dual-track infinite marquee ticker, search, & inspector modal
+│   │   ├── ProjectsSection.tsx     # Featured operations grid & interactive case study modal
+│   │   ├── CertificatesGallery.tsx # 3D perspective verified credentials wall
+│   │   ├── BeyondCode.tsx         # Creative engineering pursuits & research interests
+│   │   ├── ContactSection.tsx      # Secure communications form & direct contact links
+│   │   ├── DeveloperTerminal.tsx   # Interactive CLI terminal (whoami, skills, projects, sudo)
+│   │   ├── CommandPalette.tsx      # Command palette overlay (⌘K / Ctrl+K) for quick actions
+│   │   ├── CustomCursor.tsx        # Glowing reactive cursor with contextual label badges
+│   │   ├── LoadingScreen.tsx       # Skippable cinematic boot initialization sequence
+│   │   ├── Footer.tsx              # System status, copyright notice, & social links
+│   │   └── EasterEggs.tsx          # Secret terminal unlock modal & interactive highlights
+│   │
+│   ├── data/
+│   │   └── portfolioData.ts       # Centralized TypeScript store (Projects, Skills, Certs, Bio)
+│   │
+│   ├── App.tsx                    # Main layout coordinator, section flow, & modal state
+│   ├── index.css                  # Tailwind directives, custom scrollbars, & marquee keyframes
+│   └── main.tsx                   # React 18 DOM entry point
+│
+├── index.html                   # HTML5 entry document & SEO meta tags
+├── tailwind.config.js           # Theme configuration (Black & Burgundy color palette)
+├── vite.config.ts               # Vite build tooling & path configuration
+├── package.json                 # Project dependencies & build scripts
+└── README.md                    # Technical documentation & system architecture
+```
+
+### Data Flow & Component Architecture
+
+```mermaid
+flowchart TD
+    DataStore["portfolioData.ts\n(Central Store)"] --> App["App.tsx\n(View Orchestrator)"]
+    App --> Nav["Navbar.tsx\n(Sticky Header)"]
+    App --> Hero["Hero.tsx\n(Canvas & Terminal)"]
+    App --> About["AboutSection.tsx\n(Profile & Mindset)"]
+    App --> Tech["TechConstellation.tsx\n(Infinite Marquee & Inspector)"]
+    App --> Projects["ProjectsSection.tsx\n(Operations & Case Studies)"]
+    App --> Certs["CertificatesGallery.tsx\n(Credentials Wall)"]
+    App --> Beyond["BeyondCode.tsx\n(Research & Hobbies)"]
+    App --> Contact["ContactSection.tsx\n(Secure Transmission)"]
+    App --> Footer["Footer.tsx\n(System Footer)"]
+    
+    App --> Cmd["CommandPalette.tsx\n(⌘K Shortcuts)"]
+    App --> Cursor["CustomCursor.tsx\n(Reactive Cursor)"]
+```
+
+---
+
 ## 🛠️ Technology Stack
 
 | Layer | Technologies |
