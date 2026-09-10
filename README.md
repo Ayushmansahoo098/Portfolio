@@ -1,7 +1,7 @@
 <div align="center">
   <h1>⚡ Ayushman.OS</h1>
-  <p><b>Interactive Personal Tech Portfolio & Digital Operating System</b></p>
-  <p>Designed and built for <b>Ayushman Sahoo</b> — Software Developer & AI / ML Builder</p>
+  <p><b>Interactive Personal Tech Portfolio & Developer Operating System</b></p>
+  <p>Designed and built for <b>Ayushman Sahoo</b> — Developer</p>
 
   <br />
 
@@ -20,36 +20,33 @@
 
 ## 🌟 Overview
 
-**Ayushman.OS** is not a traditional portfolio website — it is a **personal developer universe and interactive digital operating system** designed to communicate technical competence, curiosity, and systematic execution.
+**Ayushman.OS** is an interactive personal tech portfolio designed to communicate technical competence, curiosity, and systematic execution.
 
 ### Visual & Aesthetic Identity
 - **Pitch Black Background (`#000000`)**: Deep graphite noise texture overlay and fine grid system.
-- **Burgundy & Crimson Accents (`#6D001A` / `#990026` / `#E01E43`)**: Rich, luxurious glows, interactive button states, canvas particle networks, and active section pills.
-- **High-Contrast Display Typography (`#FFFFFF`)**: Crisp headings utilizing Inter, Satoshi, and JetBrains Mono.
+- **Burgundy & Crimson Accents (`#6D001A` / `#990026` / `#E01E43`)**: Rich, luxurious glows, interactive button states, canvas particle networks, and active section indicators.
+- **Permanently Sticky Header**: Glassmorphic floating top navbar remaining visible continuously throughout scrolling.
 
 ---
 
 ## ✨ Key Features
 
 - **⚡ Cinematic Boot Sequence**: Skippable terminal initialization sequence (`INITIALIZING AYUSHMAN.OS ... SYSTEM READY`).
-- **🎯 Contextual Reactive Cursor**: Glowing desktop cursor with contextual label badges (`VIEW PROJECT`, `OPEN GITHUB`, `SEND MESSAGE`) and automatic touch device fallback.
+- **🎯 Contextual Reactive Cursor**: Glowing desktop cursor with contextual label badges (`VIEW OPERATION`, `OPEN GITHUB`, `SEND MESSAGE`) and automatic touch device fallback.
 - **💻 Interactive Developer Terminal**: Built-in CLI panel supporting commands:
   - `$ whoami` — Overview & bio
   - `$ skills` — Core tech stack breakdown
-  - `$ projects` — Featured systems & AI projects
-  - `$ journey` — Career timeline
+  - `$ projects` — Featured open-source projects
   - `$ contact` — Social links
   - `$ sudo hire ayushman` — *Unlocks secret ACCESS GRANTED mode*
-- **🌌 Interactive Tech Constellation**: Force node graph visualization connecting real technologies (Python, Swift, React, FastAPI, Groq Llama 3.3 70B, Core ML, Playwright) directly to surfaced projects.
-- **🚀 Immersive Projects Showcase**: Case studies with category filtering (`ALL`, `AI`, `WEB`, `SYSTEMS`, `EXPERIMENTS`) and expandable spring-animated architecture drawers:
-  - **Telco-RCA**: AI-driven root cause analysis platform for 5G network outages using graph reasoning & Groq Llama 3.3 70B (Hugging Face Spaces).
-  - **Kairo**: Real-time event discovery platform aggregating 500+ hackathons across 50+ cities via Playwright scrapers (Vercel).
-  - **Aether**: AI-powered macOS workspace operating layer in Swift/SwiftUI, SQLite, and Core ML.
-  - **Robot-as-a-Web-Service**: Browser-based telemetry HUD & robot teleoperation dashboard built for ECS Expo.
-- **📜 3D Floating Perspective Credentials Wall**: Interactive tilt cards showcasing verified credentials from **HackerRank**, **CTTC (MSME)**, and **Oracle** (Agentic AI Specialist).
+- **🔄 Infinite Scrolling Tech Stack Ticker**: Edge-to-edge dual-track infinite marquee with vertical white line separators, live search filtering, and pause-on-hover inspector.
+- **🚀 Featured Operations**: Production systems and AI agents featuring Ayushman's pinned GitHub repositories:
+  - **[Telco-Root-cause-analysis](https://github.com/Ayushmansahoo098/Telco-Root-cause-analysis)**: AI 5G network outage root cause analysis platform using graph reasoning & Groq Llama 3.3 70B.
+  - **[Kairo-Event-Discovery-app](https://github.com/Ayushmansahoo098/Kairo-Event-Discovery-app)**: Real-time event discovery aggregator indexing 500+ hackathons via Playwright scrapers.
+  - **[pdf-to-quiz-nlp](https://github.com/Ayushmansahoo098/pdf-to-quiz-nlp)**: Offline NLP system parsing PDFs into interactive quizzes using spaCy & TF-IDF.
+  - **[SafeRoute](https://github.com/Ayushmansahoo098/SafeRoute)**: Safety navigation web app calculating safe travel routes based on location intelligence.
+- **📜 3D Perspective Credentials Wall**: Verified credentials from **HackerRank**, **CTTC (MSME)**, and **Oracle** (Agentic AI Specialist).
 - **⌨️ Command Palette (`⌘K` / `Ctrl+K`)**: Rapid navigation, action shortcuts, resume download, and terminal triggers.
-- **🎮 Konami Code Easter Egg**: Typing `↑ ↑ ↓ ↓ ← → ← →` launches a celebratory burgundy confetti matrix.
-- **📊 GitHub Telemetry Engine**: Live stats fetch for `@Ayushmansahoo098` with activity heat map visualization.
 
 ---
 
@@ -59,21 +56,9 @@
 | :--- | :--- |
 | **Framework** | React 18, Vite, TypeScript |
 | **Styling** | Tailwind CSS, Custom CSS Variables, Glassmorphism, Noise Overlays |
-| **Animations** | Framer Motion, HTML5 Canvas API, Canvas Confetti |
+| **Animations** | Framer Motion, HTML5 Canvas API |
 | **Icons** | Lucide React |
 | **Data Layer** | Modular TypeScript central store (`src/data/portfolioData.ts`) |
-
----
-
-## 📂 Data Customization Guide
-
-All portfolio content is abstracted into a single, clean TypeScript data file:
-
-```bash
-src/data/portfolioData.ts
-```
-
-To update any content (e.g. adding new projects, modifying bio details, updating metrics, or changing social links), simply edit `src/data/portfolioData.ts`. The UI will reflect changes immediately.
 
 ---
 
