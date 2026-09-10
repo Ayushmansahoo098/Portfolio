@@ -76,7 +76,6 @@ export const PORTFOLIO_DATA = {
       github: "https://github.com/Ayushmansahoo098",
       linkedin: "https://linkedin.com/in/ayush-man-sahoo",
       email: "ayushmansahoo098@gmail.com",
-      website: "https://portfolio-ayush-man.vercel.app",
       resume: "#"
     }
   },
@@ -115,10 +114,9 @@ DEVOPS     :: Docker, Vercel, Hugging Face Spaces, Vite, Git`,
 2025 :: Shipped Telco-Root-cause-analysis (Hugging Face) & Kairo-Event-Discovery-app (Vercel)
 2026 :: Building systems tools & earning Oracle Agentic AI certification`,
 
-    contact: `PORTFOLIO :: portfolio-ayush-man.vercel.app
-GITHUB    :: github.com/Ayushmansahoo098
-LINKEDIN  :: linkedin.com/in/ayush-man-sahoo
-EMAIL     :: ayushmansahoo098@gmail.com`
+    contact: `GITHUB   :: github.com/Ayushmansahoo098
+LINKEDIN :: linkedin.com/in/ayush-man-sahoo
+EMAIL    :: ayushmansahoo098@gmail.com`
   },
 
   projects: [
