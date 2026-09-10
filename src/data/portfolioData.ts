@@ -76,6 +76,7 @@ export const PORTFOLIO_DATA = {
       github: "https://github.com/Ayushmansahoo098",
       linkedin: "https://linkedin.com/in/ayush-man-sahoo",
       email: "ayushmansahoo098@gmail.com",
+      website: "https://portfolio-ayushmansahoo.vercel.app",
       resume: "#"
     }
   },
@@ -114,9 +115,10 @@ DEVOPS     :: Docker, Vercel, Hugging Face Spaces, Vite, Git`,
 2025 :: Shipped Telco-Root-cause-analysis (Hugging Face) & Kairo-Event-Discovery-app (Vercel)
 2026 :: Building systems tools & earning Oracle Agentic AI certification`,
 
-    contact: `GITHUB   :: github.com/Ayushmansahoo098
-LINKEDIN :: linkedin.com/in/ayush-man-sahoo
-EMAIL    :: ayushmansahoo098@gmail.com`
+    contact: `PORTFOLIO :: portfolio-ayushmansahoo.vercel.app
+GITHUB    :: github.com/Ayushmansahoo098
+LINKEDIN  :: linkedin.com/in/ayush-man-sahoo
+EMAIL     :: ayushmansahoo098@gmail.com`
   },
 
   projects: [
@@ -147,7 +149,7 @@ EMAIL    :: ayushmansahoo098@gmail.com`
         { label: "Graph Tiers", value: "4 Difficulty Levels" },
         { label: "Deployment", value: "Hugging Face" }
       ],
-      liveDemoUrl: "https://huggingface.co/spaces",
+      liveDemoUrl: "https://github.com/Ayushmansahoo098/Telco-Root-cause-analysis",
       sourceCodeUrl: "https://github.com/Ayushmansahoo098/Telco-Root-cause-analysis"
     },
     {
@@ -177,7 +179,7 @@ EMAIL    :: ayushmansahoo098@gmail.com`
         { label: "Sources", value: "4 Platforms" },
         { label: "Platform", value: "Vercel" }
       ],
-      liveDemoUrl: "https://vercel.com",
+      liveDemoUrl: "https://github.com/Ayushmansahoo098/Kairo-Event-Discovery-app",
       sourceCodeUrl: "https://github.com/Ayushmansahoo098/Kairo-Event-Discovery-app"
     },
     {
@@ -205,6 +207,7 @@ EMAIL    :: ayushmansahoo098@gmail.com`
         { label: "Execution Mode", value: "100% Offline" },
         { label: "NLP Library", value: "spaCy + TF-IDF" }
       ],
+      liveDemoUrl: "https://github.com/Ayushmansahoo098/pdf-to-quiz-nlp",
       sourceCodeUrl: "https://github.com/Ayushmansahoo098/pdf-to-quiz-nlp"
     },
     {
@@ -232,6 +235,7 @@ EMAIL    :: ayushmansahoo098@gmail.com`
         { label: "Stack", value: "React + Leaflet" },
         { label: "Focus", value: "Safety Navigation" }
       ],
+      liveDemoUrl: "https://github.com/Ayushmansahoo098/SafeRoute",
       sourceCodeUrl: "https://github.com/Ayushmansahoo098/SafeRoute"
     }
   ] as Project[],
