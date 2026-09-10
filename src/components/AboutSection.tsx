@@ -41,11 +41,11 @@ export const AboutSection: React.FC = () => {
           <div className="pt-4 border-t border-white/10 grid grid-cols-1 xs:grid-cols-2 gap-4 font-mono text-xs">
             <div className="space-y-1">
               <span className="text-slate-500 block text-[10px] sm:text-xs">PRIMARY FOCUS</span>
-              <span className="text-[#E01E43] font-semibold">MERN + AI/ML Agents</span>
+              <span className="text-[#E01E43] font-semibold">Full-Stack + Agentic AI</span>
             </div>
             <div className="space-y-1">
-              <span className="text-slate-500 block text-[10px] sm:text-xs">SECONDARY PASSIONS</span>
-              <span className="text-white font-semibold">Motion Design & macOS Systems</span>
+              <span className="text-slate-500 block text-[10px] sm:text-xs">CORE INTERESTS</span>
+              <span className="text-white font-semibold">UI/UX & Systems Architecture</span>
             </div>
           </div>
         </motion.div>

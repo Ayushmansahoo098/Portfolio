@@ -64,12 +64,12 @@ export const PORTFOLIO_DATA = {
     status: "AVAILABLE FOR OPPORTUNITIES",
     location: "India",
     education: "B.Tech in Computer Science Engineering — VIT-AP",
-    focus: "AI / ML + Software Engineering (MERN stack)",
+    focus: "Full-Stack Software Engineering + AI / ML",
     mindset: "Curious → Experimental → Practical",
-    goal: "Building toward an SDE role, with a longer-term move into ML engineering",
+    goal: "Building high-impact software & intelligent systems",
     bioStory: [
       "I don't just write code; I construct complete digital systems from first principles.",
-      "My work spans full-stack web applications, agentic AI systems with local & cloud LLMs, and native desktop workspace operating layers.",
+      "My work spans full-stack web applications, agentic AI systems with local & cloud LLMs, and real-time data automation tools.",
       "Whether it's isolating 5G network outages using causal graph reasoning or scraping & deduplicating thousands of event signals across India, I thrive on breaking complex challenges into reliable, high-performance software."
     ],
     socials: {
@@ -82,20 +82,20 @@ export const PORTFOLIO_DATA = {
 
   profilePanel: {
     NAME: "Ayushman Sahoo",
-    ROLE: "Software Developer",
-    FOCUS: "AI / ML + Software Engineering (MERN stack)",
+    ROLE: "Developer",
+    FOCUS: "Full-Stack + AI / ML",
     EDUCATION: "B.Tech, Computer Science Engineering — VIT-AP",
     LOCATION: "India",
-    STATUS: "Building",
+    STATUS: "Available for Opportunities",
     MINDSET: "Curious → Experimental → Practical",
-    GOAL: "SDE role → transitioning into ML engineering"
+    GOAL: "Building high-impact software & intelligent systems"
   },
 
   terminalCommands: {
     whoami: `Ayushman Sahoo
 Computer Science Engineering student, VIT-AP
-Software Developer — MERN stack + AI/ML
-Building toward an SDE role, with a longer-term move into ML engineering`,
+Developer — Full-Stack + AI/ML
+Building high-impact software & intelligent systems`,
 
     skills: `LANGUAGES  :: Python, TypeScript/JavaScript, Java, C, Swift
 FRONTEND   :: React.js, Next.js, Tailwind CSS, SwiftUI
