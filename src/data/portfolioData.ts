@@ -59,7 +59,7 @@ export interface Achievement {
 export const PORTFOLIO_DATA = {
   personal: {
     name: "AYUSHMAN SAHOO",
-    title: "SOFTWARE DEVELOPER / AI / ML BUILDER",
+    title: "DEVELOPER",
     subtitle: "I build software, experiment with intelligent systems, and turn difficult problems into things people can actually use.",
     status: "AVAILABLE FOR OPPORTUNITIES",
     location: "India",
