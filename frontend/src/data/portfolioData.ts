@@ -76,7 +76,7 @@ export const PORTFOLIO_DATA = {
       github: "https://github.com/Ayushmansahoo098",
       linkedin: "https://linkedin.com/in/ayush-man-sahoo",
       email: "ayushmansahoo098@gmail.com",
-      resume: "#"
+      resume: "/resume.pdf"
     }
   },
 
