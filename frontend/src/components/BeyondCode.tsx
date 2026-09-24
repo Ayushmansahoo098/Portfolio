@@ -18,7 +18,7 @@ export const BeyondCode: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center space-x-2 text-[#E01E43] font-mono text-xs font-semibold uppercase tracking-widest">
           <Sparkles className="w-4 h-4" />
-          <span>CHAPTER 06 // PERSONALITY</span>
+          <span>CHAPTER 04 // PERSONALITY</span>
         </div>
         <h2 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
           BEYOND CODE

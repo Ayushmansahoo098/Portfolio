@@ -59,7 +59,7 @@ export const ContactSection: React.FC = () => {
       <div className="space-y-4 sm:space-y-6 text-left">
         <div className="flex items-center space-x-2 text-[#E01E43] font-mono text-xs font-semibold uppercase tracking-widest">
           <Lock className="w-4 h-4" />
-          <span>CHAPTER 07 // GET IN TOUCH</span>
+          <span>CHAPTER 05 // GET IN TOUCH</span>
         </div>
 
         <h2 className="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-tight sm:leading-none">
