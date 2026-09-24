@@ -204,9 +204,10 @@ export const Hero: React.FC<HeroProps> = ({
 
             <a
               href={PORTFOLIO_DATA.personal.socials.resume}
+              download="Ayushman_Sahoo_Resume.pdf"
               target="_blank"
               rel="noreferrer"
-              data-cursor="RESUME"
+              data-cursor="DOWNLOAD RESUME"
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl glass-panel hover:bg-[#4A0012]/40 active:scale-95 text-white font-semibold text-xs sm:text-sm border border-white/10 hover:border-[#990026] transition-all flex items-center justify-center space-x-2 text-slate-200 hover:text-white"
             >
               <FileText className="w-4 h-4 text-[#E01E43]" />

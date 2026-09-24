@@ -44,7 +44,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     {
       label: 'Download Resume',
       icon: FileText,
-      action: () => window.open(PORTFOLIO_DATA.personal.socials.resume, '_blank'),
+      action: () => {
+        const link = document.createElement('a');
+        link.href = PORTFOLIO_DATA.personal.socials.resume;
+        link.download = 'Ayushman_Sahoo_Resume.pdf';
+        link.click();
+      },
     },
     {
       label: 'Open GitHub Profile',

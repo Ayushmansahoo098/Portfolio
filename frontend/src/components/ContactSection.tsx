@@ -82,8 +82,10 @@ export const ContactSection: React.FC = () => {
           <div className="flex flex-wrap gap-2 pt-1 font-mono text-xs">
             <a
               href={PORTFOLIO_DATA.personal.socials.resume}
+              download="Ayushman_Sahoo_Resume.pdf"
               target="_blank"
               rel="noreferrer"
+              data-cursor="DOWNLOAD RESUME"
               className="px-3.5 py-2 rounded-xl bg-[#6D001A] hover:bg-[#8E0022] text-white border border-[#990026] flex items-center space-x-2 font-bold transition-all shadow-md"
             >
               <FileText className="w-4 h-4" />
