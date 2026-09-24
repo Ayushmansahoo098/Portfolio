@@ -8,7 +8,6 @@ import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
 import { TechConstellation } from './components/TechConstellation';
 import { ProjectsSection } from './components/ProjectsSection';
-import { CertificatesGallery } from './components/CertificatesGallery';
 import { BeyondCode } from './components/BeyondCode';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -68,8 +67,6 @@ export function App() {
               selectedProjectId={selectedProjectId}
               onClearSelectedProject={() => setSelectedProjectId(null)}
             />
-
-            <CertificatesGallery />
 
             <BeyondCode />
 

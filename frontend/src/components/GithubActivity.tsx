@@ -14,11 +14,16 @@ export const GithubActivity: React.FC = () => {
   const [userData, setUserData] = useState<UserData | null>(null);
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${PORTFOLIO_DATA.githubStats.username}`)
+    fetch('/api/stats')
       .then((res) => res.json())
-      .then((data) => {
-        if (data && data.public_repos !== undefined) {
-          setUserData(data);
+      .then((resData) => {
+        if (resData && resData.data && resData.data.publicRepos !== undefined) {
+          setUserData({
+            public_repos: resData.data.publicRepos,
+            followers: resData.data.followers || 0,
+            following: resData.data.following || 0,
+            created_at: '2023',
+          });
         }
       })
       .catch(() => {});

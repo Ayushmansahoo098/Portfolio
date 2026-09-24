@@ -15,7 +15,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCommandPalette }) => {
     { label: 'ABOUT', href: 'about' },
     { label: 'SKILLS', href: 'skills' },
     { label: 'PROJECTS', href: 'projects' },
-    { label: 'CERTIFICATES', href: 'certificates' },
     { label: 'CONTACT', href: 'contact' },
   ];
 

@@ -53,23 +53,26 @@ export const CustomCursor: React.FC = () => {
         transition={{ type: 'spring', damping: 30, stiffness: 400, mass: 0.1 }}
       />
 
-      {/* Glowing aura / text badge */}
+      {/* Glowing aura / magnetic ring */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998] flex items-center justify-center font-mono text-[10px] font-semibold uppercase tracking-wider text-white border border-[#990026]/60 bg-[#4A0012]/80 backdrop-blur-md hidden md:flex"
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998] flex items-center justify-center font-mono text-[10px] font-semibold uppercase tracking-wider text-white hidden md:flex"
         animate={{
           x: position.x - (cursorText ? 55 : isHovered ? 24 : 16),
           y: position.y - (cursorText ? 18 : isHovered ? 24 : 16),
           width: cursorText ? 110 : isHovered ? 48 : 32,
           height: cursorText ? 36 : isHovered ? 48 : 32,
           borderRadius: cursorText ? 18 : 9999,
+          backgroundColor: 'transparent',
+          borderWidth: isHovered ? '1.5px' : '1px',
+          borderColor: isHovered ? 'rgba(224, 30, 67, 0.8)' : 'rgba(153, 0, 38, 0.4)',
           boxShadow: isHovered
-            ? '0 0 30px rgba(109, 0, 26, 0.6)'
-            : '0 0 10px rgba(109, 0, 26, 0.2)',
+            ? '0 0 20px rgba(224, 30, 67, 0.3), inset 0 0 10px rgba(224, 30, 67, 0.1)'
+            : '0 0 10px rgba(109, 0, 26, 0.15)',
         }}
         transition={{ type: 'spring', damping: 25, stiffness: 250 }}
       >
         {cursorText && (
-          <span className="whitespace-nowrap px-2 text-center text-white drop-shadow">
+          <span className="whitespace-nowrap px-2 py-0.5 rounded-full text-center text-white drop-shadow bg-[#4A0012]/80 border border-[#990026]/60">
             {cursorText}
           </span>
         )}

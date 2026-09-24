@@ -6,15 +6,51 @@ import { PORTFOLIO_DATA } from '../data/portfolioData';
 export const ContactSection: React.FC = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.email || !formState.message) return;
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormState({ name: '', email: '', message: '' });
-    }, 4000);
+    setIsSubmitting(true);
+    try {
+      // Send directly to Web3Forms from the browser (required — Web3Forms blocks server-side calls)
+      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      if (accessKey) {
+        const w3fRes = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            access_key: accessKey,
+            name: formState.name || 'Anonymous Visitor',
+            email: formState.email,
+            message: formState.message,
+            subject: `🚀 [Ayushman.OS] New message from ${formState.name || 'a visitor'}`,
+          }),
+        });
+        const w3fData = await w3fRes.json();
+        if (!w3fData.success) {
+          console.error('Web3Forms submission error:', w3fData.message);
+        }
+      }
+
+      // Also log to backend (fire-and-forget)
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formState),
+      }).catch(() => {});
+
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormState({ name: '', email: '', message: '' });
+      }, 4000);
+    } catch (err) {
+      console.error('Failed to submit contact form:', err);
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -23,13 +59,15 @@ export const ContactSection: React.FC = () => {
       <div className="space-y-4 sm:space-y-6 text-left">
         <div className="flex items-center space-x-2 text-[#E01E43] font-mono text-xs font-semibold uppercase tracking-widest">
           <Lock className="w-4 h-4" />
-          <span>CHAPTER 07 // SECURE COMMS CHANNEL</span>
+          <span>CHAPTER 07 // GET IN TOUCH</span>
         </div>
 
-        <h2 className="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl font-black text-white tracking-tight leading-tight sm:leading-none">
-          SECURE COMMS
+        <h2 className="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-tight sm:leading-none">
+          BUILDING <span className="text-gradient">SYSTEMS.</span>
           <br />
-          <span className="text-gradient">TRANSMISSION.</span>
+          TRAINING <span className="text-gradient">INTELLIGENCE.</span>
+          <br />
+          SHIPPING <span className="text-gradient">PRODUCTS.</span>
         </h2>
       </div>
 
@@ -37,7 +75,7 @@ export const ContactSection: React.FC = () => {
         {/* Left Column: Direct Links */}
         <div className="lg:col-span-5 space-y-6">
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
-            Whether you&apos;re building an AI/ML team, looking for an ambitious SDE candidate, or wanting to discuss 5G network reasoning or macOS systems, initiate contact below.
+            Whether you&apos;re building an AI/ML team, looking for a high-impact SDE, or scaling robust full-stack applications—let&apos;s build something exceptional together.
           </p>
 
           {/* Quick Action Chips */}
@@ -99,7 +137,7 @@ export const ContactSection: React.FC = () => {
         {/* Right Column: Contact Form */}
         <div className="lg:col-span-7 glass-panel p-6 sm:p-10 rounded-2xl border border-white/10 space-y-6 bg-[#080305]">
           <h3 className="text-lg sm:text-xl font-bold text-white font-mono flex items-center space-x-2">
-            <span>INITIATE DIRECT TRANSMISSION</span>
+            <span>SEND A DIRECT MESSAGE</span>
           </h3>
 
           {submitted ? (
@@ -109,7 +147,7 @@ export const ContactSection: React.FC = () => {
               className="p-6 sm:p-8 rounded-xl bg-[#4A0012]/40 border border-[#990026] text-center space-y-3 font-mono text-xs"
             >
               <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10 text-[#E01E43] mx-auto" />
-              <h4 className="text-base sm:text-lg font-bold text-white">MESSAGE TRANSMITTED</h4>
+              <h4 className="text-base sm:text-lg font-bold text-white">MESSAGE SENT</h4>
               <p className="text-slate-300 text-xs">
                 Thank you for reaching out! I will respond to your message promptly.
               </p>
@@ -141,7 +179,7 @@ export const ContactSection: React.FC = () => {
               </div>
 
               <div className="space-y-1">
-                <label className="text-slate-400 text-[10px] uppercase tracking-wider block">Message Payload</label>
+                <label className="text-slate-400 text-[10px] uppercase tracking-wider block">Your Message</label>
                 <textarea
                   required
                   rows={4}
@@ -154,10 +192,11 @@ export const ContactSection: React.FC = () => {
 
               <button
                 type="submit"
+                disabled={isSubmitting}
                 data-cursor="SEND MESSAGE"
-                className="w-full py-3.5 rounded-xl bg-[#6D001A] hover:bg-[#8E0022] active:scale-95 text-white font-bold text-xs font-mono flex items-center justify-center space-x-2 transition-all shadow-lg shadow-[#6D001A]/30 border border-[#990026]"
+                className="w-full py-3.5 rounded-xl bg-[#6D001A] hover:bg-[#8E0022] active:scale-95 text-white font-bold text-xs font-mono flex items-center justify-center space-x-2 transition-all shadow-lg shadow-[#6D001A]/30 border border-[#990026] disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>TRANSMIT MESSAGE</span>
+                <span>{isSubmitting ? 'TRANSMITTING...' : 'SEND MESSAGE'}</span>
                 <Send className="w-4 h-4" />
               </button>
             </form>

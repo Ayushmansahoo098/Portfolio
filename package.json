@@ -1,31 +1,15 @@
 {
-  "name": "ayushman-sahoo-portfolio",
-  "private": true,
+  "name": "ayushman-sahoo-portfolio-monorepo",
   "version": "1.0.0",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "canvas-confetti": "^1.9.4",
-    "framer-motion": "^11.11.1",
-    "lucide-react": "^0.454.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "dev": "concurrently -n \"frontend,backend\" -c \"cyan,magenta\" \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "build": "npm run build --prefix frontend && npm run build --prefix backend",
+    "install:all": "npm install --prefix frontend && npm install --prefix backend"
   },
   "devDependencies": {
-    "@types/canvas-confetti": "^1.9.0",
-    "@types/node": "^22.9.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14",
-    "typescript": "^5.6.3",
-    "vite": "^5.4.10"
+    "concurrently": "^8.2.2"
   }
 }
